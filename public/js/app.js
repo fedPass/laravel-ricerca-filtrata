@@ -19333,6 +19333,10 @@ $(document).ready(function () {
         var source = $("#card-template").html();
         var template = Handlebars.compile(source);
 
+        if (!data.length) {
+          $('.results-search').append('<p class="font-weight-bold w-100 text-center text-info mt-5"> Nessun appartamento trovato </p>');
+        }
+
         for (var i = 0; i < data.length; i++) {
           console.log(data[i]);
           var context = {
